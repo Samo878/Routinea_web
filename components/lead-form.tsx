@@ -71,11 +71,11 @@ export function LeadForm({
   }
 
   return (
-    <section aria-labelledby={`${title.toLowerCase().replace(/\s+/g, "-")}-form`} className="rounded-4xl border border-stone-200 bg-white p-6 shadow-soft">
+    <section aria-labelledby={`${title.toLowerCase().replace(/\s+/g, "-")}-form`} className="rounded-4xl border border-brand-100 bg-cream-50 p-6 shadow-soft">
       <h2 id={`${title.toLowerCase().replace(/\s+/g, "-")}-form`} className="text-2xl font-semibold text-stone-900">
         {title}
       </h2>
-      <p className="mt-1 text-sm text-stone-600">
+      <p className="mt-1 text-sm text-brand-700">
         Vyplňte formulář a vrátíme se s návrhem formátu do 2 pracovních dnů.
       </p>
       <form onSubmit={onSubmit} className="mt-5 grid gap-4" noValidate>
@@ -154,10 +154,10 @@ export function LeadForm({
         </button>
       </form>
       {status === "success" ? (
-        <p className="mt-3 text-sm font-medium text-green-700">{message}</p>
+        <p className="mt-3 text-sm font-medium text-brand-700">{message}</p>
       ) : null}
       {status === "error" ? (
-        <p className="mt-3 text-sm font-medium text-rose-700">{error}</p>
+        <p className="mt-3 text-sm font-medium text-brand-900">{error}</p>
       ) : null}
       <p className="mt-4 text-xs text-stone-500">Nenačítáme externí služby.</p>
     </section>

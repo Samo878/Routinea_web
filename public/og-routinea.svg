@@ -1,8 +1,8 @@
 <svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="630" fill="#eef4ff"/>
-  <rect x="40" y="40" width="1120" height="550" rx="28" fill="#dce9ff"/>
-  <path d="M120 210C200 120 340 120 430 210C520 300 640 300 720 210C800 130 900 130 1080 210" stroke="#204f96" stroke-width="20" stroke-linecap="round"/>
+  <rect width="1200" height="630" fill="#FBF7F2"/>
+  <rect x="40" y="40" width="1120" height="550" rx="28" fill="#F6EFE6"/>
+  <path d="M120 210C200 120 340 120 430 210C520 300 640 300 720 210C800 130 900 130 1080 210" stroke="#145DA1" stroke-width="20" stroke-linecap="round"/>
   <rect x="120" y="250" width="960" height="140" rx="20" fill="#ffffff"/>
-  <text x="170" y="330" font-family="Arial, 'Segoe UI'" font-size="52" fill="#0A1F45" font-weight="700">Routinea</text>
-  <text x="170" y="380" font-family="Arial, 'Segoe UI'" font-size="30" fill="#17335d">Pro dny, kdy nevíte, jak začít.</text>
+  <text x="170" y="330" font-family="Arial, 'Segoe UI'" font-size="52" fill="#145DA1" font-weight="700">Routinea</text>
+  <text x="170" y="380" font-family="Arial, 'Segoe UI'" font-size="30" fill="#145DA1">Pro dny, kdy nevíte, jak začít.</text>
 </svg>

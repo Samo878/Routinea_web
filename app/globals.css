@@ -8,12 +8,12 @@
 
 @layer base {
   * {
-    @apply border-stone-200;
+    @apply border-brand-100;
   }
 
   html,
   body {
-    @apply bg-cream-50 text-stone-900;
+    @apply bg-cream-50 text-brand-900;
   }
 
   body {
@@ -31,11 +31,11 @@
   }
 
   .card {
-    @apply rounded-4xl border border-stone-200 bg-white p-6 shadow-soft;
+    @apply rounded-4xl border border-brand-100 bg-white p-6 shadow-soft;
   }
 
   .chip {
-    @apply inline-flex rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-stone-700;
+    @apply inline-flex rounded-full bg-brand-100 px-3 py-1 text-xs font-medium text-brand-700;
   }
 }
 

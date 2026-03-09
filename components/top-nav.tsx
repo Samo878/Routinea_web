@@ -19,8 +19,8 @@ export function TopNav() {
     <header
       className={`sticky top-0 z-50 border-b transition-all duration-300 ${
         isScrolled
-          ? "border-stone-200/30 bg-white/35"
-          : "border-stone-200/70 bg-white/75"
+          ? "border-brand-200/35 bg-cream-50/85"
+          : "border-brand-200/70 bg-cream-50/95"
       } backdrop-blur`}
     >
       <a href="#content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:bg-brand-600 focus:px-3 focus:py-2 focus:text-white">
