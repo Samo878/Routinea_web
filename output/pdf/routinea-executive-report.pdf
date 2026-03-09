@@ -1,0 +1,114 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /MacRomanEncoding >>
+endobj
+2 0 obj
+<< /Font << /F1 1 0 R >> >>
+endobj
+3 0 obj
+<< /Length 2468 >>
+stream
+BT
+/F1 20 Tf
+1 0 0 1 48 786 Tm
+(Routinea Website Executive Report) Tj
+/F1 11 Tf
+1 0 0 1 48 762 Tm
+(Management summary of implementation, value, and next milestones) Tj
+/F1 12 Tf
+1 0 0 1 48 742 Tm
+(Project status) Tj
+/F1 10 Tf
+1 0 0 1 58 726 Tm
+(The Routinea website is fully implemented with the requested pages: Home, For Schools,) Tj
+1 0 0 1 58 710 Tm
+(Workshops, About, Contact, and a local contact API route.) Tj
+1 0 0 1 58 694 Tm
+(Design and content are production-oriented and optimized for Czech-first traffic, with a calm) Tj
+1 0 0 1 58 678 Tm
+(and modern visual direction.) Tj
+/F1 12 Tf
+1 0 0 1 48 658 Tm
+(What was built) Tj
+/F1 10 Tf
+1 0 0 1 58 642 Tm
+(Next.js App Router with TypeScript and Tailwind, including full responsive pages and semantic) Tj
+1 0 0 1 58 626 Tm
+(sections.) Tj
+1 0 0 1 58 610 Tm
+(Reusable brand components: top navigation, logo, footer, and lead form to reduce technical) Tj
+1 0 0 1 58 594 Tm
+(debt.) Tj
+1 0 0 1 58 578 Tm
+(Workshop catalog with trend/education/exam filters and card-based content blocks.) Tj
+1 0 0 1 58 562 Tm
+(For Schools section includes workshop formats, outcomes, and request form.) Tj
+1 0 0 1 58 546 Tm
+(Route-level SEO metadata and social preview image references in layout metadata.) Tj
+/F1 12 Tf
+1 0 0 1 48 526 Tm
+(Lead capture and governance) Tj
+/F1 10 Tf
+1 0 0 1 58 510 Tm
+(Contact forms post to /api/contact and do not use external services.) Tj
+1 0 0 1 58 494 Tm
+(Anti spam includes a hidden honeypot field and in-memory rate limiting by IP.) Tj
+1 0 0 1 58 478 Tm
+(Successful submissions are logged in server console with structured fields for operational) Tj
+1 0 0 1 58 462 Tm
+(review.) Tj
+/F1 12 Tf
+1 0 0 1 48 442 Tm
+(Why this is launch ready) Tj
+/F1 10 Tf
+1 0 0 1 58 426 Tm
+(Clear IA aligned to your requested flow and tone, with no medical framing.) Tj
+1 0 0 1 58 410 Tm
+(Accessible forms, focus states, and readable layout patterns support accessibility.) Tj
+1 0 0 1 58 394 Tm
+(Shared content model and componentized UI allow fast future updates.) Tj
+/F1 12 Tf
+1 0 0 1 48 374 Tm
+(Recommended next actions) Tj
+/F1 10 Tf
+1 0 0 1 58 358 Tm
+(Use Vercel for deployment and connect custom domain routinea.cz.) Tj
+1 0 0 1 58 342 Tm
+(Swap placeholder images with final visuals, then re-run lint and build before each release.) Tj
+1 0 0 1 58 326 Tm
+(Add optional language switch to English as next growth step.) Tj
+/F1 8 Tf
+1 0 0 1 48 28 Tm
+(Routinea project documentation) Tj
+1 0 0 1 520 28 Tm
+(Page 1) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Type /Pages /Kids [5 0 R] /Count 1 >>
+endobj
+5 0 obj
+<< /Type /Page /Parent 4 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 3 0 R >>
+endobj
+6 0 obj
+<< /Type /Catalog /Pages 4 0 R >>
+endobj
+7 0 obj
+<< /Title (Routinea Website Executive Report) /Author (Routinea Engineering) /Creator (Local PDF generator) >>
+endobj
+xref
+0 8
+0000000000 65535 f 
+0000000009 00000 n 
+0000000107 00000 n 
+0000000150 00000 n 
+0000002669 00000 n 
+0000002726 00000 n 
+0000002830 00000 n 
+0000002879 00000 n 
+trailer
+<< /Size 8 /Root 6 0 R /Info 7 0 R >>
+startxref
+3005
+%%EOF

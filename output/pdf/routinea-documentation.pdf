@@ -1,0 +1,473 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /MacRomanEncoding >>
+endobj
+2 0 obj
+<< /Font << /F1 1 0 R >> >>
+endobj
+3 0 obj
+<< /Length 1153 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(Routinea Website Documentation) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(How the site is built, from route structure to deployment-ready details.) Tj
+1 0 0 1 48 738 Tm
+(This document explains in plain structure the Routinea marketing site that was built in this repository.) Tj
+1 0 0 1 48 723 Tm
+(The goal of the project is to provide a calm, practical website for schools, students, and parents,) Tj
+1 0 0 1 48 708 Tm
+(while staying simple to maintain and fast to run.) Tj
+/F1 13 Tf
+1 0 0 1 48 693 Tm
+(Project objective and value position) Tj
+/F1 10 Tf
+1 0 0 1 48 675 Tm
+(The site is designed to present Routinea as a supportive brand and program, not only as a single) Tj
+1 0 0 1 48 660 Tm
+(product. The message is intentionally non clinical and focuses on practical starting support for) Tj
+1 0 0 1 48 645 Tm
+(students.) Tj
+1 0 0 1 48 630 Tm
+(The key message is stable: Routinea helps with the first step, reduces mental friction, and supports) Tj
+1 0 0 1 48 615 Tm
+(teachers with realistic formats that fit school routines.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 1) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 1996 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(Route by route understanding) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(How each URL supports the information architecture and user goals.) Tj
+/F1 13 Tf
+1 0 0 1 48 738 Tm
+(Home page: /) Tj
+/F1 10 Tf
+1 0 0 1 48 722 Tm
+(The home page is arranged in a clear sequence: Hero, Problem, Routinea positioning, optional Kit,) Tj
+1 0 0 1 48 707 Tm
+(workshops preview, schools CTA, FAQ, and trust section.) Tj
+1 0 0 1 48 692 Tm
+(This structure is intentional because different visitors arrive with different urgency. School leaders) Tj
+1 0 0 1 48 677 Tm
+(look for proof quickly, students need emotional clarity, and parents look for practical next steps.) Tj
+1 0 0 1 56 662 Tm
+(- Hero contains two primary calls to action: schools and direct support requests.) Tj
+1 0 0 1 56 647 Tm
+(- Problem section introduces the stuck moment, shame spiral, and unclear first step without medical) Tj
+1 0 0 1 56 632 Tm
+(labels.) Tj
+1 0 0 1 56 617 Tm
+(- FAQ section answers objections and reduces friction before users ask for contact.) Tj
+/F1 13 Tf
+1 0 0 1 48 602 Tm
+(Schools page: /for-schools) Tj
+/F1 10 Tf
+1 0 0 1 48 586 Tm
+(This page converts visitors by describing workshop formats, topic list, and expected outcomes. It is the) Tj
+1 0 0 1 48 571 Tm
+(page where schools can request an event immediately.) Tj
+1 0 0 1 56 556 Tm
+(- 45 minute talk and 60 to 90 minute workshop formats are documented with explicit use cases.) Tj
+/F1 13 Tf
+1 0 0 1 48 541 Tm
+(Workshops page: /workshops) Tj
+/F1 10 Tf
+1 0 0 1 48 525 Tm
+(The catalog uses filter tags and card-based presentation for students, teachers, and optional kit) Tj
+1 0 0 1 48 510 Tm
+(integration.) Tj
+/F1 13 Tf
+1 0 0 1 48 495 Tm
+(About and contact pages: /about and /contact) Tj
+/F1 10 Tf
+1 0 0 1 48 479 Tm
+(About defines tone and trust. Contact includes the shared form with direct fields and simple company) Tj
+1 0 0 1 48 464 Tm
+(details.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 2) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Length 1479 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(Component architecture) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(How reusable building blocks keep the codebase safe and maintainable.) Tj
+1 0 0 1 48 738 Tm
+(The project separates UI primitives from page files. This avoids duplication and makes changes safer.) Tj
+/F1 13 Tf
+1 0 0 1 48 723 Tm
+(Shared components) Tj
+/F1 10 Tf
+1 0 0 1 56 707 Tm
+(- Top navigation keeps route links consistent and reusable across all pages.) Tj
+1 0 0 1 56 692 Tm
+(- Footer contains contact links and social placeholders in one place.) Tj
+1 0 0 1 56 677 Tm
+(- Lead form is a single client component used in multiple pages with configurable labels and) Tj
+1 0 0 1 56 662 Tm
+(submission text.) Tj
+1 0 0 1 56 647 Tm
+(- Logo is an inline SVG mark, so no dependency on external image files for core identity.) Tj
+/F1 13 Tf
+1 0 0 1 48 632 Tm
+(Content module) Tj
+/F1 10 Tf
+1 0 0 1 48 614 Tm
+(The content module stores cards, FAQ entries, workshop list, and copy blocks used across routes. Editing) Tj
+1 0 0 1 48 599 Tm
+(one file updates the whole site language footprint with fewer mistakes.) Tj
+/F1 13 Tf
+1 0 0 1 48 584 Tm
+(Why this pattern helps) Tj
+/F1 10 Tf
+1 0 0 1 48 566 Tm
+(Reusing these components means future updates can focus on copy and strategy instead of rewriting) Tj
+1 0 0 1 48 551 Tm
+(structure. That reduces the chance of introducing inconsistent UX across pages.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 3) Tj
+ET
+endstream
+endobj
+6 0 obj
+<< /Length 1537 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(Styling and design system) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(How visual consistency is controlled using Tailwind configuration.) Tj
+1 0 0 1 48 738 Tm
+(A small design system is defined in the Tailwind configuration and used through utility classes and) Tj
+1 0 0 1 48 723 Tm
+(shared CSS utilities.) Tj
+1 0 0 1 56 708 Tm
+(- Neutral base palette with one warm accent keeps the interface calm and mature.) Tj
+1 0 0 1 56 693 Tm
+(- Rounded cards, soft shadows, and generous spacing create a readable StudyTok style without chaotic) Tj
+1 0 0 1 56 678 Tm
+(motion.) Tj
+1 0 0 1 56 663 Tm
+(- Global utility classes reduce repeated CSS while keeping section spacing consistent.) Tj
+/F1 13 Tf
+1 0 0 1 48 648 Tm
+(Accessibility decisions) Tj
+/F1 10 Tf
+1 0 0 1 56 630 Tm
+(- All forms have visible labels and clear helper text.) Tj
+1 0 0 1 56 615 Tm
+(- Keyboard navigation is supported through focus styles and semantic links.) Tj
+1 0 0 1 56 600 Tm
+(- A skip link allows quick access to main content for keyboard and screen reader users.) Tj
+1 0 0 1 56 585 Tm
+(- Contrast and structure are tuned for clarity on mobile and desktop screens.) Tj
+/F1 13 Tf
+1 0 0 1 48 570 Tm
+(Performance decisions) Tj
+/F1 10 Tf
+1 0 0 1 48 552 Tm
+(No heavy JS dependencies were added. The UI stays light with small, page based components. Images are) Tj
+1 0 0 1 48 537 Tm
+(local SVG placeholders and can be replaced later without layout churn.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 4) Tj
+ET
+endstream
+endobj
+7 0 obj
+<< /Length 1466 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(Lead capture API and anti spam behavior) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(Server side behavior of the contact route and what is logged locally.) Tj
+1 0 0 1 48 738 Tm
+(The form submits to /api/contact using a POST request with JSON payload. It is handled by a Next.js) Tj
+1 0 0 1 48 723 Tm
+(route handler.) Tj
+/F1 13 Tf
+1 0 0 1 48 708 Tm
+(Validation flow) Tj
+/F1 10 Tf
+1 0 0 1 56 692 Tm
+(- Input values are trimmed and length limited for robustness.) Tj
+1 0 0 1 56 677 Tm
+(- Email is validated with a basic format check for delivery reliability.) Tj
+1 0 0 1 56 662 Tm
+(- Missing required fields return a 400 error with a clear message.) Tj
+/F1 13 Tf
+1 0 0 1 48 647 Tm
+(Spam protection) Tj
+/F1 10 Tf
+1 0 0 1 56 631 Tm
+(- Honeypot field named hp catches blind form bots without affecting real users.) Tj
+1 0 0 1 56 616 Tm
+(- In memory rate limiting is implemented with a short window of 60 seconds and a maximum of 4) Tj
+1 0 0 1 56 601 Tm
+(requests.) Tj
+/F1 13 Tf
+1 0 0 1 48 586 Tm
+(Logging) Tj
+/F1 10 Tf
+1 0 0 1 48 570 Tm
+(On successful submission the payload is printed in the server log in JSON format with name, email,) Tj
+1 0 0 1 48 555 Tm
+(optional phone and school, role, message, source page, IP and timestamp.) Tj
+1 0 0 1 48 540 Tm
+(This satisfies your local-only data capture request and avoids external service dependencies.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 5) Tj
+ET
+endstream
+endobj
+8 0 obj
+<< /Length 1079 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(SEO and social preview) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(Search visibility and social link readiness for each page.) Tj
+1 0 0 1 48 738 Tm
+(The root layout defines shared metadata for title template, description, Open Graph fields, and Twitter) Tj
+1 0 0 1 48 723 Tm
+(card fields.) Tj
+1 0 0 1 56 708 Tm
+(- The site language is set to cs-CZ by default and includes a prepared English alternate route) Tj
+1 0 0 1 56 693 Tm
+(marker for future growth.) Tj
+1 0 0 1 56 678 Tm
+(- A local OG image is stored in public assets and referenced in metadata so links render) Tj
+1 0 0 1 56 663 Tm
+(consistently.) Tj
+/F1 13 Tf
+1 0 0 1 48 648 Tm
+(Analytics ready but clean) Tj
+/F1 10 Tf
+1 0 0 1 48 630 Tm
+(No tracking script is installed, matching your request for a clean setup. Instead, lightweight data) Tj
+1 0 0 1 48 615 Tm
+(attributes are placed on key CTA buttons and forms so future analytics can be added safely without UI) Tj
+1 0 0 1 48 600 Tm
+(refactors.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 6) Tj
+ET
+endstream
+endobj
+9 0 obj
+<< /Length 1515 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(Local development and deployment workflow) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(Commands and sequence for predictable updates.) Tj
+1 0 0 1 48 738 Tm
+(For day to day work, use standard Next.js commands. This keeps the process predictable for any developer) Tj
+1 0 0 1 48 723 Tm
+(joining the project.) Tj
+/F1 13 Tf
+1 0 0 1 48 708 Tm
+(Local commands) Tj
+/F1 10 Tf
+1 0 0 1 56 692 Tm
+(- npm install to install project dependencies.) Tj
+1 0 0 1 56 677 Tm
+(- npm run dev to run the development server.) Tj
+1 0 0 1 56 662 Tm
+(- npm run lint to validate correctness and style rules.) Tj
+1 0 0 1 56 647 Tm
+(- npm run build for production compilation before deploy.) Tj
+/F1 13 Tf
+1 0 0 1 48 632 Tm
+(Recommended test path before publish) Tj
+/F1 10 Tf
+1 0 0 1 56 616 Tm
+(- Open each required route and verify forms and filters are working.) Tj
+1 0 0 1 56 601 Tm
+(- Submit contact form once for each audience type and confirm console logging shows expected payload) Tj
+1 0 0 1 56 586 Tm
+(shape.) Tj
+/F1 13 Tf
+1 0 0 1 48 571 Tm
+(Deployment notes) Tj
+/F1 10 Tf
+1 0 0 1 48 553 Tm
+(The architecture is built for Vercel deployment. API route and pages are compatible with serverless) Tj
+1 0 0 1 48 538 Tm
+(deployment patterns.) Tj
+1 0 0 1 48 523 Tm
+(For domain setup and HTTPS, add routinea.cz and www.routinea.cz in Vercel domain settings and follow DNS) Tj
+1 0 0 1 48 508 Tm
+(records from the platform.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 7) Tj
+ET
+endstream
+endobj
+10 0 obj
+<< /Length 1300 >>
+stream
+BT
+/F1 18 Tf
+1 0 0 1 48 790 Tm
+(Maintenance and next steps) Tj
+/F1 10 Tf
+1 0 0 1 48 762 Tm
+(Where to improve next without redesigning the whole foundation.) Tj
+/F1 13 Tf
+1 0 0 1 48 738 Tm
+(Short list for next sprint) Tj
+/F1 10 Tf
+1 0 0 1 56 720 Tm
+(- Replace placeholder hero and social images with final photography while preserving dimensions.) Tj
+1 0 0 1 56 705 Tm
+(- Move all route copy to one content source for easier language management and quick iterations.) Tj
+1 0 0 1 56 690 Tm
+(- Add structured tests if the team requires release confidence for the form API.) Tj
+/F1 13 Tf
+1 0 0 1 48 675 Tm
+(Scaling considerations) Tj
+/F1 10 Tf
+1 0 0 1 48 657 Tm
+(The current in-memory rate limit is sufficient for launch, but should move to shared storage when) Tj
+1 0 0 1 48 642 Tm
+(traffic grows or when deployed with multiple instances.) Tj
+1 0 0 1 48 627 Tm
+(For long term analytics, keep the current data attributes and map them to the chosen event pipeline.) Tj
+/F1 13 Tf
+1 0 0 1 48 612 Tm
+(Security and reliability) Tj
+/F1 10 Tf
+1 0 0 1 48 594 Tm
+(Add alerting on API failures and maintain a simple admin check log for contact submissions if needed by) Tj
+1 0 0 1 48 579 Tm
+(operations process.) Tj
+BT
+/F1 9 Tf
+1 0 0 1 48 24 Tm
+(Routinea Website Documentation) Tj
+1 0 0 1 520 24 Tm
+(Page 8) Tj
+ET
+endstream
+endobj
+11 0 obj
+<< /Type /Pages /Kids [12 0 R 13 0 R 14 0 R 15 0 R 16 0 R 17 0 R 18 0 R 19 0 R] /Count 8 >>
+endobj
+12 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 3 0 R >>
+endobj
+13 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 4 0 R >>
+endobj
+14 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 5 0 R >>
+endobj
+15 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 6 0 R >>
+endobj
+16 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 7 0 R >>
+endobj
+17 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 8 0 R >>
+endobj
+18 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 9 0 R >>
+endobj
+19 0 obj
+<< /Type /Page /Parent 11 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 10 0 R >>
+endobj
+20 0 obj
+<< /Type /Catalog /Pages 11 0 R >>
+endobj
+21 0 obj
+<< /Title (Routinea Website Documentation) /Author (Routinea Team) /Producer (Direct PDF writer) >>
+endobj
+xref
+0 22
+0000000000 65535 f 
+0000000009 00000 n 
+0000000107 00000 n 
+0000000150 00000 n 
+0000001354 00000 n 
+0000003401 00000 n 
+0000004931 00000 n 
+0000006519 00000 n 
+0000008036 00000 n 
+0000009166 00000 n 
+0000010732 00000 n 
+0000012084 00000 n 
+0000012192 00000 n 
+0000012298 00000 n 
+0000012404 00000 n 
+0000012510 00000 n 
+0000012616 00000 n 
+0000012722 00000 n 
+0000012828 00000 n 
+0000012934 00000 n 
+0000013041 00000 n 
+0000013092 00000 n 
+trailer
+<< /Size 22 /Root 20 0 R /Info 21 0 R >>
+startxref
+13208
+%%EOF

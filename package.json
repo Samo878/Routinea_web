@@ -1,0 +1,31 @@
+{
+  "name": "routinea-marketing-site",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.9 <22"
+  },
+  "scripts": {
+    "dev": "next dev --hostname 127.0.0.1 --port 3000 --webpack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "next": "^16.1.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20",
+    "@types/react": "18",
+    "@types/react-dom": "18",
+    "autoprefixer": "10.4.19",
+    "eslint": "^9.10.0",
+    "eslint-config-next": "^16.1.6",
+    "postcss": "8.4.38",
+    "tailwindcss": "3.4.4",
+    "typescript": "5.5.4"
+  }
+}

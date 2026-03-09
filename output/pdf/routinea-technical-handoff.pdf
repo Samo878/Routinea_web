@@ -1,0 +1,163 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica /Encoding /MacRomanEncoding >>
+endobj
+2 0 obj
+<< /Font << /F1 1 0 R >> >>
+endobj
+3 0 obj
+<< /Length 2483 >>
+stream
+BT
+/F1 20 Tf
+1 0 0 1 48 786 Tm
+(Routinea Technical Handoff) Tj
+/F1 11 Tf
+1 0 0 1 48 762 Tm
+(Developer map from feature areas to source files) Tj
+/F1 12 Tf
+1 0 0 1 48 742 Tm
+(Route files) Tj
+/F1 10 Tf
+1 0 0 1 58 726 Tm
+(app/page.tsx: homepage sections, FAQ, workshops preview, and schools contact CTA.) Tj
+1 0 0 1 58 710 Tm
+(app/for-schools/page.tsx: school landing explanation, formats, outcomes, and workshop request) Tj
+1 0 0 1 58 694 Tm
+(form.) Tj
+1 0 0 1 58 678 Tm
+(app/workshops/page.tsx: client-side filter state for Trendy / Educational / Exam season) Tj
+1 0 0 1 58 662 Tm
+(categories.) Tj
+1 0 0 1 58 646 Tm
+(app/about/page.tsx: brand story and positioning explanation.) Tj
+1 0 0 1 58 630 Tm
+(app/contact/page.tsx: direct contact page and shared lead form usage.) Tj
+/F1 12 Tf
+1 0 0 1 48 610 Tm
+(Reusable UI components) Tj
+/F1 10 Tf
+1 0 0 1 58 594 Tm
+(components/top-nav.tsx: global navigation and skip link target semantics.) Tj
+1 0 0 1 58 578 Tm
+(components/site-footer.tsx: shared footer links and contact placeholders.) Tj
+1 0 0 1 58 562 Tm
+(components/site-logo.tsx: inline SVG brand mark.) Tj
+1 0 0 1 58 546 Tm
+(components/lead-form.tsx: reusable form component with validation UI handling and API call) Tj
+1 0 0 1 58 530 Tm
+(logic.) Tj
+1 0 0 1 58 514 Tm
+(components/analytics-config.tsx: JSON container for future analytics hook-up without runtime) Tj
+1 0 0 1 58 498 Tm
+(tracker.) Tj
+/F1 12 Tf
+1 0 0 1 48 478 Tm
+(Data and style) Tj
+/F1 10 Tf
+1 0 0 1 58 462 Tm
+(lib/content.ts: all repeated content arrays \(FAQ, workshops, benefits, outcomes, tags\).) Tj
+1 0 0 1 58 446 Tm
+(app/globals.css: shared utility classes and base style tokens.) Tj
+1 0 0 1 58 430 Tm
+(tailwind.config.ts: color palette, spacing, radii, shadows, gradient and font setup.) Tj
+1 0 0 1 58 414 Tm
+(next.config.js: Next.js options for app runtime in this project.) Tj
+/F1 12 Tf
+1 0 0 1 48 394 Tm
+(Backend/API) Tj
+/F1 10 Tf
+1 0 0 1 58 378 Tm
+(app/api/contact/route.ts: POST endpoint with payload parsing, validation, honeypot handling,) Tj
+1 0 0 1 58 362 Tm
+(and in-memory rate limiting.) Tj
+1 0 0 1 58 346 Tm
+(Rate limit implementation: 60 second window with a small max request threshold per IP for local) Tj
+1 0 0 1 58 330 Tm
+(anti abuse baseline.) Tj
+1 0 0 1 58 314 Tm
+(Console log format includes source page, contact details, and timestamp for easy operational) Tj
+1 0 0 1 58 298 Tm
+(visibility.) Tj
+/F1 8 Tf
+1 0 0 1 48 28 Tm
+(Routinea project documentation) Tj
+1 0 0 1 520 28 Tm
+(Page 1) Tj
+ET
+endstream
+endobj
+4 0 obj
+<< /Length 1054 >>
+stream
+BT
+/F1 20 Tf
+1 0 0 1 48 786 Tm
+(Routinea Technical Handoff \(continued\)) Tj
+/F1 11 Tf
+1 0 0 1 48 762 Tm
+(Developer map from feature areas to source files) Tj
+/F1 12 Tf
+1 0 0 1 48 742 Tm
+(SEO and metadata) Tj
+/F1 10 Tf
+1 0 0 1 58 726 Tm
+(app/layout.tsx: metadata title template, descriptions, Open Graph, Twitter card, and locale) Tj
+1 0 0 1 58 710 Tm
+(settings.) Tj
+1 0 0 1 58 694 Tm
+(public/og-routinea.svg: social share image used by metadata.) Tj
+1 0 0 1 58 678 Tm
+(Route defaults remain Czech first; English path remains optional extension point in metadata.) Tj
+/F1 12 Tf
+1 0 0 1 48 658 Tm
+(Operational notes) Tj
+/F1 10 Tf
+1 0 0 1 58 642 Tm
+(Run npm run lint before pushing to keep route and accessibility quality visible.) Tj
+1 0 0 1 58 626 Tm
+(Run npm run build as production gate before deployment.) Tj
+1 0 0 1 58 610 Tm
+(For scale, replace in-memory rate limiter with shared store when traffic increases across) Tj
+1 0 0 1 58 594 Tm
+(instances.) Tj
+/F1 8 Tf
+1 0 0 1 48 28 Tm
+(Routinea project documentation) Tj
+1 0 0 1 520 28 Tm
+(Page 2) Tj
+ET
+endstream
+endobj
+5 0 obj
+<< /Type /Pages /Kids [6 0 R 7 0 R] /Count 2 >>
+endobj
+6 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 3 0 R >>
+endobj
+7 0 obj
+<< /Type /Page /Parent 5 0 R /MediaBox [0 0 595 842] /Resources 2 0 R /Contents 4 0 R >>
+endobj
+8 0 obj
+<< /Type /Catalog /Pages 5 0 R >>
+endobj
+9 0 obj
+<< /Title (Routinea Technical Handoff) /Author (Routinea Engineering) /Creator (Local PDF generator) >>
+endobj
+xref
+0 10
+0000000000 65535 f 
+0000000009 00000 n 
+0000000107 00000 n 
+0000000150 00000 n 
+0000002684 00000 n 
+0000003789 00000 n 
+0000003852 00000 n 
+0000003956 00000 n 
+0000004060 00000 n 
+0000004109 00000 n 
+trailer
+<< /Size 10 /Root 8 0 R /Info 9 0 R >>
+startxref
+4228
+%%EOF
