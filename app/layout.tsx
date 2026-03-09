@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { IBM_Plex_Mono, Manrope } from "next/font/google";
 import "@/app/globals.css";
 import { TopNav } from "@/components/top-nav";
 import { SiteFooter } from "@/components/site-footer";
@@ -8,6 +8,11 @@ import { AnalyticsConfig } from "@/components/analytics-config";
 const manrope = Manrope({
   subsets: ["latin"],
   variable: "--font-manrope",
+  display: "swap",
+});
+const ibmMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  variable: "--font-ibm-mono",
   display: "swap",
 });
 
@@ -56,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="cs" className={manrope.variable}>
+    <html lang="cs" className={`${manrope.variable} ${ibmMono.variable}`}>
       <body className="min-h-screen bg-gradient-to-b from-cream-50 to-cream-100">
         <AnalyticsConfig />
         <TopNav />

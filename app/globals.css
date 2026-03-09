@@ -22,6 +22,12 @@
 }
 
 @layer utilities {
+  .text-xs,
+  .text-sm,
+  .text-\[0\.875rem\] {
+    font-family: var(--font-ibm-mono), "IBM Plex Mono", monospace;
+  }
+
   .section-shell {
     @apply mx-auto flex w-full max-w-page flex-col gap-10 px-4 py-16;
   }
