@@ -42,6 +42,27 @@ npm run start
 - Social preview image is located at `public/og-routinea.svg`.
 - The site uses Czech copy by default.
 
+## Google Analytics
+
+Google Analytics is included in the app layout through `components/analytics-config.tsx`.
+
+- The tracking ID is read from environment variable: `NEXT_PUBLIC_GA_MEASUREMENT_ID`
+- Current local fallback ID is `G-YKQFZENCEK` if the env var is not set.
+
+Local setup:
+
+```bash
+echo "NEXT_PUBLIC_GA_MEASUREMENT_ID=G-YKQFZENCEK" > .env.local
+```
+
+Vercel production setup:
+
+1. Go to your Vercel project → **Settings** → **Environment Variables**
+2. Add `NEXT_PUBLIC_GA_MEASUREMENT_ID` with value `G-YKQFZENCEK`
+3. Redeploy the project
+
+You only need this once if you keep the same GA property across environments.
+
 ## Contact data storage
 
 Form submissions are saved in a local file-backed database (JSONL) at:

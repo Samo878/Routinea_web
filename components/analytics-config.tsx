@@ -1,16 +1,23 @@
+import Script from "next/script";
+
 export function AnalyticsConfig() {
-  const payload = {
-    site: "routinea",
-    env: "local",
-    version: "1.0.0",
-    routeHints: ["/", "/for-schools", "/workshops", "/about", "/contact"],
-  };
+  const gaId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID ?? "G-YKQFZENCEK";
 
   return (
-    <script
-      id="routinea-analytics-config"
-      type="application/json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(payload) }}
-    />
+    <>
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
+        strategy="afterInteractive"
+      />
+      <Script id="routinea-gtag-init" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${gaId}');
+        `}
+      </Script>
+    </>
   );
 }
