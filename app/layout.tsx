@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import { TopNav } from "@/components/top-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { AnalyticsConfig } from "@/components/analytics-config";
+import { ClarityConfig } from "@/components/clarity-config";
 
 const manrope = Manrope({
   subsets: ["latin"],
@@ -59,6 +60,7 @@ export default function RootLayout({
     <html lang="cs" className={manrope.variable}>
       <body className="min-h-screen bg-gradient-to-b from-cream-50 to-cream-100">
         <AnalyticsConfig />
+        <ClarityConfig />
         <TopNav />
         <main id="content">{children}</main>
         <SiteFooter />

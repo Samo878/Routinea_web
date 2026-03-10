@@ -63,6 +63,23 @@ Vercel production setup:
 
 You only need this once if you keep the same GA property across environments.
 
+## Microsoft Clarity
+
+Clarity is initialized via `components/clarity-config.tsx` using the npm package import:
+
+```ts
+import Clarity from "@microsoft/clarity";
+```
+
+Add your project ID to the environment:
+
+```bash
+NEXT_PUBLIC_CLARITY_PROJECT_ID=your_project_id
+# or NEXT_PUBLIC_CLARITY_ID
+```
+
+If no ID is set, Clarity will stay disabled automatically.
+
 ## Contact data storage
 
 Form submissions are saved in a local file-backed database (JSONL) at:
