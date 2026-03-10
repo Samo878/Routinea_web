@@ -21,12 +21,17 @@ type ContactRecord = ContactInsert & {
 
 const databasePath =
   process.env.ROUTINEA_CONTACT_DB_PATH ??
-  path.join(process.cwd(), 'data', 'routinea_contacts.jsonl');
+  (process.env.VERCEL
+    ? path.join("/tmp", "routinea_contacts.jsonl")
+    : path.join(process.cwd(), "data", "routinea_contacts.jsonl"));
 
-const databaseDir = path.dirname(databasePath);
+const fallbackPath = path.join("/tmp", "routinea_contacts.jsonl");
 
-if (!existsSync(databaseDir)) {
-  mkdirSync(databaseDir, { recursive: true });
+function ensureDbPath(filePath: string) {
+  const dir = path.dirname(filePath);
+  if (!existsSync(dir)) {
+    mkdirSync(dir, { recursive: true });
+  }
 }
 
 function toSafeString(value: string) {
@@ -49,10 +54,38 @@ export function saveContactSubmission(payload: ContactInsert) {
     honeypot: !!payload.honeypot,
   };
 
-  appendFileSync(databasePath, `${JSON.stringify(record)}\n`, {
-    encoding: 'utf8',
-    flag: 'a',
-  });
+  const serializedRecord = `${JSON.stringify(record)}\n`;
+
+  const destinations = [databasePath];
+  if (fallbackPath !== databasePath) {
+    destinations.push(fallbackPath);
+  }
+
+  let saved = false;
+  let lastError: unknown = null;
+  
+  for (const destination of destinations) {
+    try {
+      ensureDbPath(destination);
+      appendFileSync(destination, serializedRecord, {
+        encoding: "utf8",
+        flag: "a",
+      });
+      saved = true;
+      break;
+    } catch (error) {
+      lastError = error;
+    }
+  }
+
+  if (!saved) {
+    console.error("[routinea-contact] Failed to write local lead store", {
+      error: lastError,
+      primaryPath: databasePath,
+      fallbackPath,
+    });
+    console.info("[routinea-contact] fallback payload", serializedRecord.trim());
+  }
 
   return record.id;
 }

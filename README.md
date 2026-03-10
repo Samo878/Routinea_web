@@ -46,7 +46,7 @@ npm run start
 
 Form submissions are saved in a local file-backed database (JSONL) at:
 
-`data/routinea_contacts.jsonl`
+`data/routinea_contacts.jsonl` in local dev, and `/tmp/routinea_contacts.jsonl` on Vercel runtime by default.
 
 You can change the file path with:
 
@@ -69,4 +69,4 @@ Each submission is stored as one JSON line with fields:
 - `userAgent`
 - `honeypot`
 
-For production deployment, replace this local file storage with a managed database (PostgreSQL/Supabase/etc.) before enabling auto-scaling.
+For production deployment, replace this local file storage with a managed database (PostgreSQL/Supabase/etc.) before enabling auto-scaling. A temporary fallback log is used if file writes are not allowed.
