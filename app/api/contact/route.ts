@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { saveContactSubmission } from "@/lib/contact-db";
 
 type RateState = { count: number; expiresAt: number };
 type ContactPayload = {
@@ -66,6 +67,22 @@ export async function POST(req: NextRequest) {
   };
 
   if (payload.hp) {
+    try {
+      saveContactSubmission({
+        source: payload.source || "unknown",
+        name: payload.name || "n/a",
+        email: payload.email || "n/a",
+        phone: payload.phone || "",
+        school: payload.school || "",
+        role: payload.role || "",
+        message: payload.message || "",
+        ip,
+        userAgent: req.headers.get("user-agent") ?? "unknown",
+        honeypot: true,
+      });
+    } catch (error) {
+      console.error("[routinea-contact] Failed to persist spam submission", error);
+    }
     return NextResponse.json({ ok: true });
   }
 
@@ -84,19 +101,26 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const submission = {
-    source: payload.source || "unknown",
-    name: payload.name,
-    email: payload.email,
-    phone: payload.phone,
-    school: payload.school,
-    role: payload.role,
-    message: payload.message,
-    ip,
-    timestamp: new Date().toISOString(),
-  };
+  try {
+    const leadId = saveContactSubmission({
+      source: payload.source || "unknown",
+      name: payload.name,
+      email: payload.email,
+      phone: payload.phone,
+      school: payload.school,
+      role: payload.role,
+      message: payload.message,
+      ip,
+      userAgent: req.headers.get("user-agent") ?? "unknown",
+      honeypot: false,
+    });
 
-  console.log("[routinea-contact] ", JSON.stringify(submission));
-
-  return NextResponse.json({ ok: true }, { status: 200 });
+    return NextResponse.json({ ok: true, id: leadId }, { status: 200 });
+  } catch (error) {
+    console.error("[routinea-contact] Failed to persist lead", error);
+    return NextResponse.json(
+      { error: "Nastala chyba při ukládání formuláře. Zkuste to za chvíli." },
+      { status: 500 }
+    );
+  }
 }

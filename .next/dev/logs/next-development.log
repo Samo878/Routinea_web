@@ -1,1 +1,112 @@
-[00:00:01.448] Server  LOG     ✓ Ready in 1212ms
+[00:00:01.984] Server  LOG     ✓ Ready in 1744ms
+[00:00:52.507] Browser ERROR   ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:52.541] Server  ERROR   ⨯ ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:54.127] Browser ERROR   ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:54.128] Server  ERROR   ⨯ ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:55.204] Server  LOG     ○ Compiling /_error ...
+[00:00:57.012] Browser ERROR   ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:57.157] Server  ERROR   ⨯ ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:57.260] Browser ERROR   ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:57.987] Browser ERROR   uncaughtError: Error: Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:00:58.088] Browser ERROR   ./lib/contact-db.ts:1:1
+Module not found: Can't resolve 'better-sqlite3'
+> 1 | import Database from "better-sqlite3";
+    | ^
+  2 | import { existsSync, mkdirSync } from "node:fs";
+  3 | import path from "node:path";
+  4 |
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./app/api/contact/route.ts
+[00:04:04.569] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:04:05.278] Server  WARN    ⚠ Fast Refresh had to perform a full reload due to a runtime error.
+[00:05:25.575] Browser ERROR   unhandledRejection: TypeError: null is not an object (evaluating 'event.currentTarget.reset')
