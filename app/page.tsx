@@ -114,11 +114,13 @@ export default function HomePage() {
         <section id="kit" className="section-shell">
         <div className="grid gap-8 md:grid-cols-[1.2fr_0.8fr] md:items-center">
           <div>
-            <h2 className="section-heading">Kit (volitelný doplněk)</h2>
+            <h2 className="section-heading">Focus Kit</h2>
             <p className="mt-3 text-stone-700">
-              Týmový Kit je jednoduchý set fyzických prvků a rutinního protokolu:
-              startovací karta, jednota nástrojů pro přepnutí pozornosti a malé připomínky
-              do denního rytmu. Není nutností, ale často pomáhá rozběhnout změnu rychleji.
+              Focus Kit je malý fyzický starter pro práci. Pomáhá překlenout moment mezi
+              „měl/a bych začít“ a „už pracuji“. Obsahuje jednoduché nástroje, jako jsou
+              aktivační karty a drobné podněty, které pomáhají rychle přepnout pozornost a
+              udělat první krok.
+              Kit není nutností, ale může výrazně usnadnit začátek práce.
             </p>
           </div>
           <aside className="card">
