@@ -73,7 +73,6 @@ export default function ForSchoolsPage() {
       <LeadForm
         title="Požádat o školní workshop"
         source="for-schools"
-        includeSchool
         submitLabel="Odeslat poptávku"
         roleLabel="Funkce ve škole"
       />

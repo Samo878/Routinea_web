@@ -179,9 +179,8 @@ export default function HomePage() {
           <LeadForm
             title="Poptávka workshopu"
             source="home"
-            includeSchool
             submitLabel="Požádat o workshop"
-            roleLabel="Kdo naváže spolupráci"
+            roleLabel="Název Školy"
           />
         </div>
         </section>

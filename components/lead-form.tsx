@@ -5,7 +5,6 @@ import { FormEvent, useState } from "react";
 type LeadFormProps = {
   title: string;
   source: string;
-  includeSchool?: boolean;
   submitLabel?: string;
   roleLabel?: string;
 };
@@ -15,7 +14,6 @@ type LeadStatus = "idle" | "loading" | "success" | "error";
 export function LeadForm({
   title,
   source,
-  includeSchool = false,
   submitLabel = "Odeslat",
   roleLabel = "Role",
 }: LeadFormProps) {
@@ -99,18 +97,6 @@ export function LeadForm({
             className="rounded-xl border border-stone-300 px-3 py-2 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-200"
           />
         </label>
-        {includeSchool ? (
-          <label className="grid gap-1 text-sm">
-            <span className="font-medium text-stone-700">Škola / organizace</span>
-            <input
-              type="text"
-              name="school"
-              required
-              autoComplete="organization"
-              className="rounded-xl border border-stone-300 px-3 py-2 outline-none transition focus:border-brand-500 focus:ring-2 focus:ring-brand-200"
-            />
-          </label>
-        ) : null}
         <label className="grid gap-1 text-sm">
           <span className="font-medium text-stone-700">Telefon (nepovinné)</span>
           <input
