@@ -21,10 +21,18 @@ export function SiteFooter() {
         </div>
         <div>
           <p className="text-sm font-semibold text-stone-900">Kontakt</p>
-          <p className="mt-2 text-sm text-stone-700">info@routinea.example</p>
+          <p className="mt-2 text-sm text-stone-700">inforoutinea@gmail.com</p>
           <p className="text-sm text-stone-700">Brno, Česká republika</p>
           <div className="mt-3 flex gap-3 text-sm">
-            <a href="#" aria-label="Instagram placeholder" className="rounded-full border border-stone-300 px-2 py-1">IG</a>
+            <a
+              href="https://www.instagram.com/routi_nea?igsh=MWM4Z2pjdHB1aWNqaA=="
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="rounded-full border border-stone-300 px-2 py-1"
+            >
+              IG
+            </a>
             <a href="#" aria-label="LinkedIn placeholder" className="rounded-full border border-stone-300 px-2 py-1">IN</a>
           </div>
         </div>

@@ -16,7 +16,7 @@ export default function ContactPage() {
             nebo chcete hned start, napište zprávu a ozveme se.
           </p>
           <ul className="mt-4 space-y-2 text-sm text-stone-700">
-            <li>Email: info@routinea.example</li>
+            <li>Email: inforoutinea@gmail.com</li>
             <li>Telefon: +420 123 456 789</li>
             <li>Lokace: Brno, Česká republika</li>
           </ul>
