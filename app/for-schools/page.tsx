@@ -12,55 +12,59 @@ export default function ForSchoolsPage() {
         <p className="chip">Pro školy, poradce, vedení</p>
         <h1 className="section-heading mt-4">Proč školám Routinea funguje</h1>
         <p className="mt-3 max-w-3xl text-stone-700">
-          Routinea řeší moment, kdy student „ví, že má začít“, ale tělo i hlava ho
-          zablokují. V prostředí školy pak narůstá stres, zpoždění úkolů i vyhoření.
-          Nabízíme lehké pracovní bloky, které pomáhají vrátit první mikrokrok.
+          Routinea se zaměřuje na moment, kdy student „ví, že má začít“, ale je pro něj
+          těžké udělat první krok. Ve školním prostředí se to často projeví odkládáním
+          úkolů, stresem nebo zahlcením.
+          Routinea proto nabízí jednoduché pracovní bloky, které studentům pomáhají vrátit
+          první mikrokrok a začít pracovat.
         </p>
       </section>
 
       <section className="grid gap-4 md:grid-cols-2">
         <article className="card">
-          <h2 className="text-2xl font-semibold text-stone-900">Workshop formáty</h2>
-          <ul className="mt-4 list-disc space-y-3 pl-5 text-sm text-stone-700">
-            <li>
-              <strong>45min talk:</strong> diagnostika začátku, mikrootázky a školní
-              doporučení pro třídní i předmětové hodiny.
-            </li>
-            <li>
-              <strong>60–90min workshop:</strong> interaktivní cvičení s žáky, praktický
-              model startu a reflexe s učitelem.
-            </li>
-            <li>
-              <strong>Follow-up:</strong> krátké nastavení školního rituálu a doporučení
-              pro opakované použití.
-            </li>
-          </ul>
+          <h2 className="text-2xl font-semibold text-stone-900">Možné formáty spolupráce</h2>
+          <p className="mt-4 text-sm text-stone-700">
+            Krátká prezentace nebo workshop pro studenty zaměřený na moment začátku práce s
+            úkolem a jednoduché strategie, jak udělat první krok.
+          </p>
+          <p className="mt-3 text-sm text-stone-700">
+            Formát lze přizpůsobit podle potřeb školy – od kratší přednášky až po
+            interaktivní setkání se studenty.
+          </p>
         </article>
         <article className="card">
-          <h2 className="text-2xl font-semibold text-stone-900">Výsledky</h2>
-          <div className="mt-4 grid gap-3">
-            <div>
-              <h3 className="text-sm font-semibold text-stone-900">Pro studenty</h3>
-              <ul className="mt-2 list-disc pl-5 text-sm text-stone-700">
-                {schoolOutcomes.students.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-stone-900">Pro učitele</h3>
-              <ul className="mt-2 list-disc pl-5 text-sm text-stone-700">
-                {schoolOutcomes.teachers.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+          <h2 className="text-2xl font-semibold text-stone-900">Pilotní workshop</h2>
+          <p className="mt-4 text-sm text-stone-700">
+            Routinea momentálně nabízí pilotní workshop pro studenty zaměřený na začátek práce s
+            úkoly, studijní přetížení a jednoduché pracovní strategie.
+          </p>
         </article>
       </section>
 
       <section className="card">
-        <h2 className="text-2xl font-semibold text-stone-900">Témata pro workshopy</h2>
+        <h2 className="text-2xl font-semibold text-stone-900">Výsledky</h2>
+        <div className="mt-4 grid gap-3">
+          <div>
+            <h3 className="text-sm font-semibold text-stone-900">Pro studenty</h3>
+            <ul className="mt-2 list-disc pl-5 text-sm text-stone-700">
+              {schoolOutcomes.students.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-stone-900">Pro učitele</h3>
+            <ul className="mt-2 list-disc pl-5 text-sm text-stone-700">
+              {schoolOutcomes.teachers.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section className="card">
+        <h2 className="text-2xl font-semibold text-stone-900">Témata workshopu</h2>
         <div className="mt-4 grid gap-2 text-sm text-stone-700 md:grid-cols-2">
           {schoolTopics.map((topic) => (
             <p className="rounded-xl border border-stone-200 bg-cream-50 p-3" key={topic}>

@@ -165,22 +165,23 @@ export const workshopThemes: WorkshopTheme[] = [
 ];
 
 export const schoolTopics = [
-  "AI a pozornost",
-  "Kritické myšlení v éře krátkého videa",
-  "Algoritmy, pozornost a dopamin",
+  "Jak začít, když víš, co máš dělat, ale nejde to?",
+  "Proč je začít někdy nejtěžší část práce?",
+  "Mikro-kroky vs. velké plány",
   "Zkouškový režim bez paniky",
-  "Jak vést tiché přechody mezi předměty",
+  "Přetížený mozek a informační chaos",
+  "Algoritmy, pozornost a schopnost soustředit se",
 ];
 
 export const schoolOutcomes = {
   students: [
-    "Méně začáteční úzkosti a méně studu ze zmeškaného kroku",
-    "Více startů během týdne díky jednoduchému protokolu",
-    "Zřetelnější soustředění na první 10 minut práce",
+    "větší jistota při začátku práce s úkolem",
+    "více malých startů během týdne díky jednoduchým krokům",
+    "lepší orientace v prvních minutách práce",
   ],
   teachers: [
-    "Jasnější metody pro okamžitou podporu žáků v hodině",
-    "Šablony na sdílení s rodiči bez složitých termínů",
-    "Lepší spolupráce se školním týmem a poradenskou linkou",
+    "jednoduché postupy, jak studentům pomoci začít pracovat",
+    "praktické principy využitelné přímo v hodině",
+    "nový způsob, jak se studenty mluvit o začátku práce a studijním přetížení",
   ],
 };
