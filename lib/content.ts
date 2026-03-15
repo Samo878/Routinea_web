@@ -33,19 +33,19 @@ export const problemPoints = [
 
 export const whatRoutineaCards = [
   {
-    title: "Program, ne produkt",
+    title: "Systém, ne jen produkt",
     description:
-      "Routinea je krátký rámec, který školám pomáhá rozvíjet startovací návyk u studentů bez tlakové logiky výkonu.",
+      "Routinea kombinuje jednoduché pracovní principy, fyzické nástroje a podporující prostředí. Společně pomáhají snížit bariéru začátku práce a proměnit záměr v první konkrétní krok.",
   },
   {
     title: "Externí struktura",
     description:
-      "Nízkodemandingový plán, který dává studentům jistotu: co udělat hned, jak poznat úspěch prvního kroku.",
+      "Přehledné kroky a malé pracovní bloky dávají studentům jasnou orientaci: co udělat hned a jak poznat, že první krok je hotový.",
   },
   {
     title: "Podpora smyslů",
     description:
-      "Jednoduché návyky, haptické i vizuální opory a krátké rutiny usnadňují opětovné naladění na práci.",
+      "Jednoduché haptické a vizuální prvky pomáhají přepnout pozornost a znovu se naladit na práci.",
   },
 ];
 

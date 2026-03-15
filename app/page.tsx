@@ -95,9 +95,10 @@ export default function HomePage() {
         <section id="what-is-routinea" className="section-shell">
         <h2 className="section-heading">Co je Routinea</h2>
         <p className="max-w-3xl text-stone-700">
-          Routinea je program a návykový rámec pro školy i žáky. Není to aplikace pro
-          „zlepšení disciplíny“, ale lehká struktura, která pomáhá udělat první krok
-          a pokračovat.
+          Routinea je systém, který pomáhá studentům v momentu, kdy vědí, co mají dělat,
+          ale je pro ně těžké začít. Kombinuje jednoduchou strukturu práce, fyzické nástroje
+          a podpůrné prostředí, které pomáhají snížit bariéru začátku a nastartovat pracovní
+          flow.
         </p>
         <div className="grid gap-4 md:grid-cols-3">
           {whatRoutineaCards.map((card) => (
@@ -116,11 +117,11 @@ export default function HomePage() {
           <div>
             <h2 className="section-heading">Focus Kit</h2>
             <p className="mt-3 text-stone-700">
-              Focus Kit je malý fyzický starter pro práci. Pomáhá překlenout moment mezi
-              „měl/a bych začít“ a „už pracuji“. Obsahuje jednoduché nástroje, jako jsou
-              aktivační karty a drobné podněty, které pomáhají rychle přepnout pozornost a
-              udělat první krok.
-              Kit není nutností, ale může výrazně usnadnit začátek práce.
+              Focus Kit je malý fyzický starter pro práci, který pomáhá překlenout moment
+              mezi „měl/a bych začít“ a „už pracuji“. Základem jsou aktivační karty, které
+              vedou studenta na první kroky a prvních pár minut práce. Díky nim je snazší
+              překonat odklad a ihned se soustředit na úkol. Kit může fungovat samostatně
+              nebo jako doplněk k tichému online pracovnímu prostoru Routinea.
             </p>
           </div>
           <aside className="card">
