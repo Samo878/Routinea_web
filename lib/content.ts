@@ -51,22 +51,28 @@ export const whatRoutineaCards = [
 
 export const workshopPreviews = [
   {
-    title: "AI a pozornost",
-    hook: "Když algoritmus drží pozornost, škola ji musí zase připnout na učení.",
-    students: "Pochopí, jak rozpoznat digitální rozptylení.",
-    teachers: "Dostanou nástroje pro práci se zástavou času a úloh.",
+    title: "Jak začít, když víš, co máš dělat, ale nejde to?",
+    hook: "Moment mezi „měl/a bych začít“ a „už pracuji“ je často největší překážka práce.",
+    students:
+      "Pochopí, proč je začátek práce psychologicky náročný, a vyzkouší jednoduché mikro-kroky, které pomáhají nastartovat první pracovní blok.",
+    teachers:
+      "Jednoduchý model, jak studentům pomoci začít pracovat i bez tlaku na výkon nebo disciplínu.",
   },
   {
-    title: "Kritické myšlení v éře krátkého videa",
-    hook: "Lepší než zakazovat je naučit žáky klást správné otázky.",
-    students: "Cvičí rychlé hodnocení důvěryhodnosti obsahu.",
-    teachers: "Získají aktivní scénáře do moderní hodiny.",
+    title: "Mikro-kroky vs. velké plány",
+    hook: "Velké plány často vypadají dobře na papíře, ale mozek je v praxi odkládá.",
+    students:
+      "Naučí se rozdělit velký úkol na první malý krok, který je možné začít během několika minut.",
+    teachers:
+      "Jednoduchou strukturu, kterou mohou použít při zadávání úkolů nebo projektů.",
   },
   {
-    title: "Startovací návyky před zkouškou",
-    hook: "Rychlý start je často jen tři kroky od dokončení.",
-    students: "Získají strukturu první 10 minut u studia.",
-    teachers: "Vidí menší chaos, větší jistotu a menší „úzké hrdlo“ při zkouškách.",
+    title: "Zkouškový režim bez paniky",
+    hook: "Zkouškové období často zvyšuje stres a odkládání práce.",
+    students:
+      "Vyzkouší krátké startovací rutiny, které pomáhají začít pracovat i ve stresu.",
+    teachers:
+      "Praktický model, jak studenty podpořit během náročného období bez dalšího tlaku.",
   },
 ];
 
@@ -118,49 +124,60 @@ export type WorkshopTheme = {
 
 export const workshopThemes: WorkshopTheme[] = [
   {
-    title: "AI a pozornost",
-    hook: "Jak rozpoznat, kdy technologie pracuje za vás, a kdy vás odvede.",
-    students: "Naučí se nastavit jednoduchá pravidla, když je pozornost přetížená.",
-    teachers: "Nástroje pro bezpečnou integraci tématu do předmětu nebo hodin.",
-    tags: ["Trendy", "Educational"],
-    kit: "Krátký štít na digitální přestávku + tisknutelný checklist.",
-  },
-  {
-    title: "Kritické myšlení v krátkých médiích",
-    hook: "Od „sdílej to“ k „ověř to“ v pětiminutovém cyklu.",
-    students: "Procvičí ověřování informací a odliší důkaz od dojmu.",
-    teachers: "Metodiku pro krátké diskusní aktivity bez nutnosti dlouhého času.",
-    tags: ["Educational", "Trendy"],
-  },
-  {
-    title: "Algoritmy a soustředění",
-    hook: "Přerušíme cyklus skákání mezi podněty a vrátíme studenty k jedné úloze.",
-    students: "Dostanou tři pravidla, jak rychle znovu nastartovat práci.",
-    teachers: "Dostanou scénář 10minutové rituálové fáze na začátek výuky.",
-    tags: ["Trendy", "Educational"],
-  },
-  {
-    title: "Zkouškové období: mikro-starty",
-    hook: "Ranní stres řešíme tak, že nečekáme na motivaci.",
-    students: "Prakticky nacvičí „jak začít“ u 20 nejvážnějších úloh.",
-    teachers: "Snadně srovnatelné výsledky: víc odevzdávání a mírněji zvládnutý stres.",
-    tags: ["Exam season", "Educational"],
-    kit: "Kartičky s postupem „0–2–5 minut“ pro zkouškový režim.",
-  },
-  {
-    title: "Dnešní pozornost: studium v éře TikToku",
-    hook: "Krátká forma není problém, pokud umíme rámec.",
-    students: "Naučí se přepnout z konzumace na tvorbu vlastní argumentace.",
-    teachers: "Materiál, který lze použít v 45min bloku bez technologických nároků.",
-    tags: ["Trendy", "Exam season"],
-  },
-  {
-    title: "Studijní rutina pro první start",
-    hook: "První 10 minut rozhoduje víc než deset hodin plánů.",
-    students: "Pracují s jedním jasným cílem, který mají opakovatelný.",
-    teachers: "Dostanou jednoduchý návod, jak žáka podpořit bez přísného dohledu.",
+    title: "Jak začít, když víš, co máš dělat, ale nejde to?",
+    hook: "Moment mezi „měl/a bych začít“ a „už pracuji“ je často největší překážka práce.",
+    students:
+      "Pochopí, proč je začátek práce psychologicky náročný, a vyzkouší jednoduché mikro-kroky, které pomáhají nastartovat první pracovní blok.",
+    teachers:
+      "Jednoduchý model, jak studentům pomoci začít pracovat i bez tlaku na výkon nebo disciplínu.",
     tags: ["Educational"],
-    kit: "Starter karta pro každý tým: struktura dne na 1 stránce.",
+    kit: "Ukázka aktivačních karet, které pomáhají spustit první pracovní krok.",
+  },
+  {
+    title: "Mikro-kroky vs. velké plány",
+    hook: "Velké plány často vypadají dobře na papíře, ale mozek je v praxi odkládá.",
+    students:
+      "Naučí se rozdělit velký úkol na první malý krok, který je možné začít během několika minut.",
+    teachers:
+      "Jednoduchou strukturu, kterou mohou použít při zadávání úkolů nebo projektů.",
+    tags: ["Educational"],
+  },
+  {
+    title: "Zkouškový režim bez paniky",
+    hook: "Zkouškové období často zvyšuje stres a odkládání práce.",
+    students:
+      "Vyzkouší krátké startovací rutiny, které pomáhají začít pracovat i ve stresu.",
+    teachers:
+      "Praktický model, jak studenty podpořit během náročného období bez dalšího tlaku.",
+    tags: ["Exam season"],
+    kit: "Aktivační karta pro rychlý start pracovního bloku.",
+  },
+  {
+    title: "Přetížený mozek a informační chaos",
+    hook: "Studenti dnes pracují s obrovským množstvím informací a podnětů.",
+    students:
+      "Jak snížit informační chaos a zaměřit se na jeden jasný krok práce.",
+    teachers:
+      "Krátká cvičení, která lze využít na začátku hodiny pro rychlé přepnutí pozornosti.",
+    tags: ["Educational"],
+  },
+  {
+    title: "Algoritmy, pozornost a schopnost soustředit se",
+    hook: "Digitální prostředí je navržené tak, aby udrželo naši pozornost co nejdéle.",
+    students:
+      "Lépe porozumí tomu, jak algoritmy pracují s jejich pozorností, a jak si vytvořit jednoduché hranice při práci.",
+    teachers:
+      "Srozumitelný způsob, jak otevřít téma digitální pozornosti ve výuce.",
+    tags: ["Trendy"],
+  },
+  {
+    title: "Proč je začít někdy nejtěžší část práce?",
+    hook: "Odkládání práce často není lenost, ale reakce mozku na nejistý nebo velký úkol.",
+    students:
+      "Pochopí mechanismy odkládání a vyzkouší jednoduchý postup, jak překonat první bariéru práce.",
+    teachers:
+      "Jasný jazyk, kterým mohou studentům vysvětlit problém začátku práce bez stigmatizace.",
+    tags: ["Educational"],
   },
 ];
 

@@ -19,8 +19,8 @@ export default function WorkshopsPage() {
         <p className="chip">Tématický katalog</p>
         <h1 className="section-heading mt-4">Workshopy Routinea</h1>
         <p className="mt-3 text-stone-700">
-          Aktuálně nabízíme trendy i školně ověřené blocky — vždy s jasnou strukturou,
-          jednoduchými cíli a opakovatelností.
+          Aktuálně nabízíme aktuální i školně relevantní bloky - vždy s jasnou strukturou,
+          jednoduchými cíli a praktickými kroky, které mohou studenti i učitelé snadno znovu použít.
         </p>
       </section>
 
