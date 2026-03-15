@@ -38,7 +38,7 @@ export default function HomePage() {
                 className="rounded-xl border border-stone-900 px-5 py-3 text-sm font-semibold text-stone-900 transition hover:bg-stone-900 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
                 data-track-action="hero-cta-contact"
               >
-                Get Help Starting
+                Vyzkoušet Routinea
               </Link>
             </div>
             <div className="mt-6 flex flex-wrap gap-2">
