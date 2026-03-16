@@ -99,7 +99,7 @@ The stored payload includes:
 - `source`
 - `name`
 - `email`
-- `phone`
+- `phone_number`
 - `school`
 - `role`
 - `message`

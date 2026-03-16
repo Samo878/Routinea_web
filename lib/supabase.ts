@@ -25,7 +25,7 @@ export type Database = {
           source: string;
           name: string;
           email: string;
-          phone?: string;
+          phone_number?: string;
           school?: string;
           role?: string;
           message: string;
@@ -38,7 +38,7 @@ export type Database = {
           source?: string;
           name?: string;
           email?: string;
-          phone?: string;
+          phone_number?: string;
           school?: string;
           role?: string;
           message?: string;

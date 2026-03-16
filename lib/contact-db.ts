@@ -52,7 +52,7 @@ export async function saveContactSubmission(payload: ContactInsert) {
     source: record.source,
     name: record.name,
     email: record.email,
-    phone: record.phone,
+    phone_number: record.phone,
     school: record.school,
     role: record.role,
     message: record.message,
