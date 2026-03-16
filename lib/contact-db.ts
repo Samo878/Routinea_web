@@ -1,4 +1,7 @@
-import { getSupabaseServerClient } from "./supabase";
+import {
+  DEFAULT_SUPABASE_CONTACT_TABLE,
+  getSupabaseServerClient,
+} from "./supabase";
 
 type ContactInsert = {
   source: string;
@@ -23,7 +26,11 @@ function toSafeString(value: string) {
 }
 
 export async function saveContactSubmission(payload: ContactInsert) {
-  const tableName = process.env.SUPABASE_CONTACT_TABLE ?? "contact_submissions";
+  const configuredTable = process.env.SUPABASE_CONTACT_TABLE;
+  const tableName =
+    configuredTable === DEFAULT_SUPABASE_CONTACT_TABLE
+      ? configuredTable
+      : DEFAULT_SUPABASE_CONTACT_TABLE;
   const supabase = getSupabaseServerClient();
 
   const record: ContactRecord = {
