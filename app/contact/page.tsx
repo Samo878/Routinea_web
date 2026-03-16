@@ -22,10 +22,10 @@ export default function ContactPage() {
           </ul>
         </div>
         <LeadForm
-          title="Kontaktní formulář"
-          source="contact"
-          submitLabel="Odeslat zprávu"
-          roleLabel="Pozice / role"
+          title="Poptávka workshopu"
+          source="home"
+          submitLabel="Požádat o workshop"
+          roleLabel="Název Školy"
         />
       </section>
     </div>
