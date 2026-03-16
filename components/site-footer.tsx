@@ -29,18 +29,26 @@ export function SiteFooter() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
-              className="rounded-full border border-stone-300 px-2 py-1"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 bg-white transition hover:border-stone-400 hover:bg-stone-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
             >
-              IG
+              <img
+                src="https://cdn.simpleicons.org/instagram/1c1917"
+                alt=""
+                className="h-5 w-5"
+              />
             </a>
             <a
               href="https://discord.gg/PNdJz5jD3v"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Discord"
-              className="rounded-full border border-stone-300 px-2 py-1"
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-stone-300 bg-white transition hover:border-stone-400 hover:bg-stone-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
             >
-              IN
+              <img
+                src="https://cdn.simpleicons.org/discord/1c1917"
+                alt=""
+                className="h-5 w-5"
+              />
             </a>
           </div>
         </div>
