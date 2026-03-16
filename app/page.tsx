@@ -135,6 +135,39 @@ export default function HomePage() {
         </section>
       </ScrollReveal>
 
+      <ScrollReveal delayMs={220}>
+        <section id="discord-space" className="section-shell">
+        <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-center">
+          <div>
+            <h2 className="section-heading">Tichý Discord prostor</h2>
+            <p className="mt-3 max-w-3xl text-stone-700">
+              Někdy je nejjednodušší začít, když na tom nejsi sám.
+              Routinea má tichý Discord prostor, kde studenti pracují paralelně v krátkých
+              focus blocích. Nejde o chat ani studijní skupinu, je to klidné prostředí, které
+              pomáhá překlenout moment mezi „měl/a bych začít“ a „už pracuji“.
+              Stačí se připojit a zkusit prvních 10 minut práce.
+            </p>
+          </div>
+          <div className="ml-auto flex items-center gap-4">
+            <p className="text-2xl font-semibold text-stone-900">Připoj se tady</p>
+            <a
+              href="https://discord.gg/PNdJz5jD3v"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+              className="inline-flex h-64 w-64 flex-shrink-0 items-center justify-center rounded-full border border-stone-300 bg-white transition hover:border-stone-400 hover:bg-stone-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-500"
+            >
+              <img
+                src="https://cdn.simpleicons.org/discord/1c1917"
+                alt=""
+                className="h-40 w-40"
+              />
+            </a>
+          </div>
+        </div>
+        </section>
+      </ScrollReveal>
+
       <ScrollReveal delayMs={240}>
         <section id="workshops-preview" className="section-shell">
         <h2 className="section-heading">Workshopy náhled</h2>
