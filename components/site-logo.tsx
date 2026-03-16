@@ -6,9 +6,9 @@ export function SiteLogo() {
       <Image
         src="/images/routinea_logo.jpg"
         alt="Routinea"
-        width={480}
-        height={600}
-        className="h-40 w-auto rounded-sm object-contain"
+        width={476}
+        height={267}
+        className="h-16 w-auto object-contain mix-blend-multiply md:h-20"
         priority
       />
     </span>
