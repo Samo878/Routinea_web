@@ -1,7 +1,7 @@
 import "server-only";
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 
-let supabaseClient: ReturnType<typeof createClient> | null = null;
+let supabaseClient: SupabaseClient<Database> | null = null;
 
 export type Database = {
   public: {
@@ -66,7 +66,7 @@ function getEnvValue(name: string): string {
   return value;
 }
 
-export function getSupabaseServerClient() {
+export function getSupabaseServerClient(): SupabaseClient<Database> {
   if (supabaseClient) return supabaseClient;
 
   const url = getEnvValue("SUPABASE_URL");
@@ -79,5 +79,5 @@ export function getSupabaseServerClient() {
     },
   });
 
-  return supabaseClient;
+  return supabaseClient!;
 }
