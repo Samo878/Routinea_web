@@ -17,7 +17,17 @@ export default function ContactPage() {
           </p>
           <ul className="mt-4 space-y-2 text-sm text-stone-700">
             <li>Email: inforoutinea@gmail.com</li>
-            <li>Telefon: +420 123 456 789</li>
+            <li>Telefon: +420 608 756 624</li>
+            <li>Instagram: routi_nea</li>
+            <li>
+              <a
+                href="https://discord.gg/PNdJz5jD3v"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Náš Discord zde
+              </a>
+            </li>
             <li>Lokace: Brno, Česká republika</li>
           </ul>
         </div>

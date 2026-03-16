@@ -22,7 +22,7 @@ export function SiteFooter() {
         <div>
           <p className="text-sm font-semibold text-stone-900">Kontakt</p>
           <p className="mt-2 text-sm text-stone-700">inforoutinea@gmail.com</p>
-          <p className="text-sm text-stone-700">Brno, Česká republika</p>
+          <p className="text-sm text-stone-700">+420 608 756 624</p>
           <div className="mt-3 flex gap-3 text-sm">
             <a
               href="https://www.instagram.com/routi_nea?igsh=MWM4Z2pjdHB1aWNqaA=="
@@ -33,7 +33,15 @@ export function SiteFooter() {
             >
               IG
             </a>
-            <a href="#" aria-label="LinkedIn placeholder" className="rounded-full border border-stone-300 px-2 py-1">IN</a>
+            <a
+              href="https://discord.gg/PNdJz5jD3v"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Discord"
+              className="rounded-full border border-stone-300 px-2 py-1"
+            >
+              IN
+            </a>
           </div>
         </div>
       </div>
