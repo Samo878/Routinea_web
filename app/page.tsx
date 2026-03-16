@@ -54,8 +54,8 @@ export default function HomePage() {
             <div className="absolute right-0 -top-12 h-24 w-24 rounded-full bg-brand-200 blur-2xl" aria-hidden="true" />
             <div className="card relative overflow-hidden">
               <img
-                src="/hero-abstract.svg"
-                alt="Abstraktní vizualizace startu"
+                src="/images/Rychly_start_image.jpg"
+                alt="Zapisnik s kartou rychleho startu"
                 className="h-full w-full rounded-4xl border border-stone-200 object-cover"
               />
               <div className="mt-4 rounded-3xl bg-brand-50 p-4 text-sm text-stone-700">

@@ -624,29 +624,23 @@ video {
 .grid {
   display: grid;
 }
+.h-10 {
+  height: 2.5rem;
+}
+.h-16 {
+  height: 4rem;
+}
 .h-24 {
   height: 6rem;
 }
 .h-28 {
   height: 7rem;
 }
-.h-40 {
-  height: 10rem;
+.h-5 {
+  height: 1.25rem;
 }
 .h-full {
   height: 100%;
-}
-.h-14 {
-  height: 3.5rem;
-}
-.h-16 {
-  height: 4rem;
-}
-.h-10 {
-  height: 2.5rem;
-}
-.h-5 {
-  height: 1.25rem;
 }
 .min-h-24 {
   min-height: 6rem;
@@ -654,23 +648,23 @@ video {
 .min-h-screen {
   min-height: 100vh;
 }
+.w-10 {
+  width: 2.5rem;
+}
 .w-24 {
   width: 6rem;
 }
 .w-28 {
   width: 7rem;
 }
+.w-5 {
+  width: 1.25rem;
+}
 .w-auto {
   width: auto;
 }
 .w-full {
   width: 100%;
-}
-.w-10 {
-  width: 2.5rem;
-}
-.w-5 {
-  width: 1.25rem;
 }
 .max-w-2xl {
   max-width: 42rem;
@@ -736,9 +730,6 @@ video {
 }
 .rounded-full {
   border-radius: 9999px;
-}
-.rounded-sm {
-  border-radius: 0.125rem;
 }
 .rounded-xl {
   border-radius: 0.75rem;
@@ -839,10 +830,6 @@ video {
 .p-6 {
   padding: 1.5rem;
 }
-.px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-}
 .px-3 {
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -854,10 +841,6 @@ video {
 .px-5 {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
 }
 .py-12 {
   padding-top: 3rem;
@@ -1059,6 +1042,11 @@ video {
   background-color: rgb(227 240 252 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-stone-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 248 253 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-stone-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(43 103 189 / var(--tw-bg-opacity));
@@ -1067,11 +1055,6 @@ video {
 .hover\:bg-stone-900:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(16 78 135 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-stone-50:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(243 248 253 / var(--tw-bg-opacity));
 }
 
 .hover\:text-stone-900:hover {
@@ -1177,10 +1160,6 @@ video {
 }
 
 @media (min-width: 768px) {
-
-  .md\:h-16 {
-    height: 4rem;
-  }
 
   .md\:h-20 {
     height: 5rem;
