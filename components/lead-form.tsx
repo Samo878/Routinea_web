@@ -145,7 +145,6 @@ export function LeadForm({
       {status === "error" ? (
         <p className="mt-3 text-sm font-medium text-brand-900">{error}</p>
       ) : null}
-      <p className="mt-4 text-xs text-stone-500">Nenačítáme externí služby.</p>
     </section>
   );
 }
