@@ -68,7 +68,7 @@ export async function POST(req: NextRequest) {
 
   if (payload.hp) {
     try {
-      saveContactSubmission({
+      await saveContactSubmission({
         source: payload.source || "unknown",
         name: payload.name || "n/a",
         email: payload.email || "n/a",
@@ -102,7 +102,7 @@ export async function POST(req: NextRequest) {
   }
 
   try {
-    const leadId = saveContactSubmission({
+    const leadId = await saveContactSubmission({
       source: payload.source || "unknown",
       name: payload.name,
       email: payload.email,

@@ -1,5 +1,4 @@
-import { appendFileSync, existsSync, mkdirSync } from 'node:fs';
-import path from 'node:path';
+import { getSupabaseServerClient } from "./supabase";
 
 type ContactInsert = {
   source: string;
@@ -15,33 +14,21 @@ type ContactInsert = {
 };
 
 type ContactRecord = ContactInsert & {
-  id: number;
-  createdAt: string;
+  id: string;
+  created_at: string;
 };
-
-const databasePath =
-  process.env.ROUTINEA_CONTACT_DB_PATH ??
-  (process.env.VERCEL
-    ? path.join("/tmp", "routinea_contacts.jsonl")
-    : path.join(process.cwd(), "data", "routinea_contacts.jsonl"));
-
-const fallbackPath = path.join("/tmp", "routinea_contacts.jsonl");
-
-function ensureDbPath(filePath: string) {
-  const dir = path.dirname(filePath);
-  if (!existsSync(dir)) {
-    mkdirSync(dir, { recursive: true });
-  }
-}
 
 function toSafeString(value: string) {
   return String(value ?? '');
 }
 
-export function saveContactSubmission(payload: ContactInsert) {
+export async function saveContactSubmission(payload: ContactInsert) {
+  const tableName = process.env.SUPABASE_CONTACT_TABLE ?? "contact_submissions";
+  const supabase = getSupabaseServerClient();
+
   const record: ContactRecord = {
-    id: Date.now(),
-    createdAt: new Date().toISOString(),
+    id: "",
+    created_at: new Date().toISOString(),
     source: toSafeString(payload.source),
     name: toSafeString(payload.name),
     email: toSafeString(payload.email),
@@ -54,38 +41,33 @@ export function saveContactSubmission(payload: ContactInsert) {
     honeypot: !!payload.honeypot,
   };
 
-  const serializedRecord = `${JSON.stringify(record)}\n`;
+  const dbPayload = {
+    source: record.source,
+    name: record.name,
+    email: record.email,
+    phone: record.phone,
+    school: record.school,
+    role: record.role,
+    message: record.message,
+    ip: record.ip,
+    user_agent: record.userAgent,
+    honeypot: record.honeypot,
+    created_at: record.created_at,
+  };
 
-  const destinations = [databasePath];
-  if (fallbackPath !== databasePath) {
-    destinations.push(fallbackPath);
-  }
+  const { data, error } = await supabase
+    .from(tableName)
+    .insert(dbPayload)
+    .select("id")
+    .single();
 
-  let saved = false;
-  let lastError: unknown = null;
-  
-  for (const destination of destinations) {
-    try {
-      ensureDbPath(destination);
-      appendFileSync(destination, serializedRecord, {
-        encoding: "utf8",
-        flag: "a",
-      });
-      saved = true;
-      break;
-    } catch (error) {
-      lastError = error;
-    }
-  }
-
-  if (!saved) {
-    console.error("[routinea-contact] Failed to write local lead store", {
-      error: lastError,
-      primaryPath: databasePath,
-      fallbackPath,
+  if (error) {
+    console.error("[routinea-contact] Failed to persist lead in Supabase", {
+      error,
+      table: tableName,
     });
-    console.info("[routinea-contact] fallback payload", serializedRecord.trim());
+    throw error;
   }
 
-  return record.id;
+  return data?.id ?? "";
 }

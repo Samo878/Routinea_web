@@ -34,7 +34,7 @@ npm run start
 - `/about` – brand story
 - `/contact` – contact page + form
 - `/api/contact` – local lead endpoint with in-memory rate limiting + honeypot logging
-- `/api/contact` – persists lead submissions to a local file database (`data/routinea_contacts.jsonl`)
+- `/api/contact` – persists lead submissions to Supabase (`contact_submissions`)
 
 ## Notes
 
@@ -82,20 +82,20 @@ If no ID is set, Clarity will stay disabled automatically.
 
 ## Contact data storage
 
-Form submissions are saved in a local file-backed database (JSONL) at:
+Form submissions are stored in Supabase in the `contact_submissions` table.
 
-`data/routinea_contacts.jsonl` in local dev, and `/tmp/routinea_contacts.jsonl` on Vercel runtime by default.
-
-You can change the file path with:
+Set these environment variables before deployment:
 
 ```bash
-ROUTINEA_CONTACT_DB_PATH=/your/path/contact-data.db
+SUPABASE_URL=https://your-project-ref.supabase.co
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key
+SUPABASE_CONTACT_TABLE=contact_submissions
 ```
 
-Each submission is stored as one JSON line with fields:
+The stored payload includes:
 
 - `id`
-- `createdAt`
+- `created_at`
 - `source`
 - `name`
 - `email`
@@ -104,7 +104,7 @@ Each submission is stored as one JSON line with fields:
 - `role`
 - `message`
 - `ip`
-- `userAgent`
+- `user_agent`
 - `honeypot`
 
-For production deployment, replace this local file storage with a managed database (PostgreSQL/Supabase/etc.) before enabling auto-scaling. A temporary fallback log is used if file writes are not allowed.
+For production, keep this endpoint server-side only (do not expose `SUPABASE_SERVICE_ROLE_KEY` to the browser).
