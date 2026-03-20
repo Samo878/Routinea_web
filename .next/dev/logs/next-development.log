@@ -1,2 +1,13 @@
-[00:00:03.442] Server  LOG     ✓ Ready in 3.2s
-[00:00:17.992] Server  LOG     ○ Compiling / ...
+[20:46:10.677] Server  WARN    
+[20:46:10.681] Server  WARN    warn "-" "The `content` option in your Tailwind CSS configuration is missing or empty."
+[20:46:10.681] Server  WARN    warn "-" "Configure your content sources or your generated CSS will be missing styles."
+[20:46:10.681] Server  WARN    warn "-" "https://tailwindcss.com/docs/content-configuration"
+[20:46:38.392] Server  ERROR   ⨯ ./node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js:11:1
+Module not found: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: /Users/samuelferenc/Documents/New project/node_modules/@swc/helpers/package.json (directory description file): Error: No file content
+
+https://nextjs.org/docs/messages/module-not-found
+
+Import trace for requested module:
+./node_modules/next/dist/client/react-client-callbacks/error-boundary-callbacks.js
+./node_modules/next/dist/client/app-index.js
+./node_modules/next/dist/client/app-next-dev.js
