@@ -23,6 +23,13 @@ function cleanPayload(value: string | undefined) {
   return String(value ?? "").trim().slice(0, 5000);
 }
 
+function hasNewsletterSupabaseConfig() {
+  return Boolean(
+    process.env.SUPABASE_URL?.trim() &&
+      process.env.SUPABASE_SERVICE_ROLE_KEY?.trim()
+  );
+}
+
 export async function POST(req: NextRequest) {
   let body: NewsletterPayload;
 
@@ -49,6 +56,16 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(
       { error: "Zadejte prosím platný e-mail." },
       { status: 400 }
+    );
+  }
+
+  if (!hasNewsletterSupabaseConfig()) {
+    return NextResponse.json(
+      {
+        error:
+          "Newsletter není na serveru správně nastavený. Doplňte SUPABASE_URL a SUPABASE_SERVICE_ROLE_KEY.",
+      },
+      { status: 500 }
     );
   }
 
