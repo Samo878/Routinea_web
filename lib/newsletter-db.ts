@@ -60,11 +60,7 @@ export async function saveNewsletterSubscription(payload: NewsletterInsert) {
     created_at: record.created_at,
   };
 
-  const { data, error } = await supabase
-    .from(tableName)
-    .insert(dbPayload)
-    .select("id")
-    .single();
+  const { error } = await supabase.from(tableName).insert(dbPayload);
 
   if (error) {
     if (!isDuplicateNewsletterError(error)) {
@@ -77,5 +73,5 @@ export async function saveNewsletterSubscription(payload: NewsletterInsert) {
     throw error;
   }
 
-  return data?.id ?? "";
+  return "";
 }
