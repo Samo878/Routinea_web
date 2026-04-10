@@ -20,7 +20,7 @@ function toSafeString(value: string) {
   return String(value ?? "");
 }
 
-function getNewsletterTableName() {
+export function getNewsletterTableName() {
   const configuredTable = process.env.SUPABASE_NEWSLETTER_TABLE;
 
   return configuredTable === DEFAULT_SUPABASE_NEWSLETTER_TABLE
@@ -63,13 +63,6 @@ export async function saveNewsletterSubscription(payload: NewsletterInsert) {
   const { error } = await supabase.from(tableName).insert(dbPayload);
 
   if (error) {
-    if (!isDuplicateNewsletterError(error)) {
-      console.error("[routinea-newsletter] Failed to persist subscriber in Supabase", {
-        error,
-        table: tableName,
-      });
-    }
-
     throw error;
   }
 

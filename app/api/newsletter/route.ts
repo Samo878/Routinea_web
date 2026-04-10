@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import {
+  getNewsletterTableName,
   isDuplicateNewsletterError,
   saveNewsletterSubscription,
 } from "@/lib/newsletter-db";
@@ -8,6 +9,24 @@ type NewsletterPayload = {
   email?: string;
   source?: string;
   hp?: string;
+};
+
+type NewsletterErrorCode =
+  | "INVALID_EMAIL"
+  | "CONFIG_MISSING"
+  | "DB_INSERT_FAILED";
+
+type NewsletterSuccessResponse = {
+  ok: true;
+  id?: string;
+  runtimeRevision: string;
+};
+
+type NewsletterErrorResponse = {
+  ok: false;
+  code: NewsletterErrorCode;
+  error: string;
+  runtimeRevision: string;
 };
 
 function getIpAddress(req: NextRequest): string {
@@ -30,13 +49,35 @@ function hasNewsletterSupabaseConfig() {
   );
 }
 
+function getRuntimeRevision() {
+  return process.env.VERCEL_GIT_COMMIT_SHA ?? "local-dev";
+}
+
+function jsonResponse(
+  body: NewsletterSuccessResponse | NewsletterErrorResponse,
+  status: number
+) {
+  const response = NextResponse.json(body, { status });
+  response.headers.set("x-routinea-revision", body.runtimeRevision);
+  return response;
+}
+
 export async function POST(req: NextRequest) {
+  const runtimeRevision = getRuntimeRevision();
   let body: NewsletterPayload;
 
   try {
     body = (await req.json()) as NewsletterPayload;
   } catch {
-    return NextResponse.json({ error: "Neplatný payload." }, { status: 400 });
+    return jsonResponse(
+      {
+        ok: false,
+        code: "INVALID_EMAIL",
+        error: "Neplatný požadavek pro přihlášení k newsletteru.",
+        runtimeRevision,
+      },
+      400
+    );
   }
 
   const email = cleanPayload(body.email).toLowerCase();
@@ -44,28 +85,44 @@ export async function POST(req: NextRequest) {
   const hp = cleanPayload(body.hp);
 
   if (hp) {
-    return NextResponse.json({ ok: true }, { status: 200 });
+    return jsonResponse({ ok: true, runtimeRevision }, 200);
   }
 
   if (!email) {
-    return NextResponse.json({ error: "Zadejte prosím e-mail." }, { status: 400 });
+    return jsonResponse(
+      {
+        ok: false,
+        code: "INVALID_EMAIL",
+        error: "Zadejte prosím e-mail.",
+        runtimeRevision,
+      },
+      400
+    );
   }
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailPattern.test(email)) {
-    return NextResponse.json(
-      { error: "Zadejte prosím platný e-mail." },
-      { status: 400 }
+    return jsonResponse(
+      {
+        ok: false,
+        code: "INVALID_EMAIL",
+        error: "Zadejte prosím platný e-mail.",
+        runtimeRevision,
+      },
+      400
     );
   }
 
   if (!hasNewsletterSupabaseConfig()) {
-    return NextResponse.json(
+    return jsonResponse(
       {
+        ok: false,
+        code: "CONFIG_MISSING",
         error:
           "Newsletter není na serveru správně nastavený. Doplňte SUPABASE_URL a SUPABASE_SERVICE_ROLE_KEY.",
+        runtimeRevision,
       },
-      { status: 500 }
+      500
     );
   }
 
@@ -78,16 +135,33 @@ export async function POST(req: NextRequest) {
       honeypot: false,
     });
 
-    return NextResponse.json({ ok: true, id }, { status: 200 });
+    return jsonResponse({ ok: true, id, runtimeRevision }, 200);
   } catch (error) {
     if (isDuplicateNewsletterError(error)) {
-      return NextResponse.json({ ok: true }, { status: 200 });
+      return jsonResponse({ ok: true, runtimeRevision }, 200);
     }
 
-    console.error("[routinea-newsletter] Failed to persist subscriber", error);
-    return NextResponse.json(
-      { error: "Nepodařilo se uložit váš e-mail. Zkuste to prosím za chvíli." },
-      { status: 500 }
+    console.error("[routinea-newsletter] Failed to persist subscriber", {
+      code:
+        typeof error === "object" && error !== null && "code" in error
+          ? error.code
+          : undefined,
+      message:
+        typeof error === "object" && error !== null && "message" in error
+          ? error.message
+          : String(error),
+      table: getNewsletterTableName(),
+      runtimeRevision,
+    });
+
+    return jsonResponse(
+      {
+        ok: false,
+        code: "DB_INSERT_FAILED",
+        error: "Nepodařilo se uložit váš e-mail. Zkuste to prosím za chvíli.",
+        runtimeRevision,
+      },
+      500
     );
   }
 }

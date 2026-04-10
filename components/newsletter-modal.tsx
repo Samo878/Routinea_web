@@ -20,6 +20,27 @@ const FOCUSABLE_SELECTOR = [
 
 type ModalStorageState = "seen" | "dismissed" | "submitted";
 type SubmitStatus = "idle" | "loading" | "success" | "error";
+type NewsletterApiSuccess = {
+  ok: true;
+  id?: string;
+  runtimeRevision?: string;
+};
+type NewsletterApiError = {
+  ok?: false;
+  code?: string;
+  error?: string;
+  runtimeRevision?: string;
+};
+
+function toNewsletterApiError(
+  data: NewsletterApiSuccess | NewsletterApiError | null
+) {
+  if (!data) {
+    return null;
+  }
+
+  return "ok" in data && data.ok === true ? null : data;
+}
 
 function getFocusableElements(container: HTMLElement) {
   return Array.from(container.querySelectorAll<HTMLElement>(FOCUSABLE_SELECTOR)).filter(
@@ -197,14 +218,44 @@ export function NewsletterModal() {
         }),
       });
 
+      const data = (await response.json().catch(() => null)) as
+        | NewsletterApiSuccess
+        | NewsletterApiError
+        | null;
+      const errorData = toNewsletterApiError(data);
+
       if (!response.ok) {
-        const data = (await response.json().catch(() => null)) as
-          | { error?: string }
-          | null;
+        console.error("[routinea-newsletter] Submit failed", {
+          status: response.status,
+          code: errorData?.code ?? "UNKNOWN_ERROR",
+          runtimeRevision:
+            errorData?.runtimeRevision ??
+            response.headers.get("x-routinea-revision") ??
+            "unknown",
+        });
 
         setStatus("error");
         setMessage(
-          data?.error ?? "Nepodařilo se uložit váš e-mail. Zkuste to prosím za chvíli."
+          errorData?.error ??
+            "Nepodařilo se uložit váš e-mail. Zkuste to prosím za chvíli."
+        );
+        return;
+      }
+
+      if (errorData) {
+        console.error("[routinea-newsletter] Submit failed", {
+          status: response.status,
+          code: errorData.code ?? "UNKNOWN_ERROR",
+          runtimeRevision:
+            errorData.runtimeRevision ??
+            response.headers.get("x-routinea-revision") ??
+            "unknown",
+        });
+
+        setStatus("error");
+        setMessage(
+          errorData.error ??
+            "Nepodařilo se uložit váš e-mail. Zkuste to prosím za chvíli."
         );
         return;
       }
@@ -214,6 +265,10 @@ export function NewsletterModal() {
       setMessage("Děkujeme, jste přihlášeni k odběru novinek od Routinea.");
       event.currentTarget.reset();
     } catch {
+      console.error("[routinea-newsletter] Submit failed", {
+        code: "NETWORK_ERROR",
+        runtimeRevision: "unknown",
+      });
       setStatus("error");
       setMessage("Nepodařilo se uložit váš e-mail. Zkuste to prosím za chvíli.");
     }
