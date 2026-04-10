@@ -33,12 +33,13 @@ npm run start
 - `/workshops` – workshop catalog with filters
 - `/about` – brand story
 - `/contact` – contact page + form
-- `/api/contact` – local lead endpoint with in-memory rate limiting + honeypot logging
-- `/api/contact` – persists lead submissions to Supabase (`contact_submissions`)
+- `/api/contact` – local lead endpoint with in-memory rate limiting, honeypot logging and Supabase persistence (`contact_submissions`)
+- `/api/newsletter` – newsletter subscribe endpoint for the homepage modal
 
 ## Notes
 
 - Contact forms are wired to a local API route and do not use external CRM or marketing services.
+- The homepage shows the newsletter modal only once per browser using `localStorage`.
 - Social preview image is located at `public/og-routinea.svg`.
 - The site uses Czech copy by default.
 
@@ -108,3 +109,32 @@ The stored payload includes:
 - `honeypot`
 
 For production, keep this endpoint server-side only (do not expose `SUPABASE_SERVICE_ROLE_KEY` to the browser).
+
+## Newsletter data storage
+
+Newsletter subscriptions are stored in Supabase in the `newsletter_subscribers` table and are sent from the homepage modal through `/api/newsletter`.
+
+Set this environment variable if you want to override the default table name:
+
+```bash
+SUPABASE_NEWSLETTER_TABLE=newsletter_subscribers
+```
+
+Recommended table setup:
+
+```sql
+create table if not exists public.newsletter_subscribers (
+  id uuid primary key default gen_random_uuid(),
+  email text not null,
+  source text not null,
+  ip text not null,
+  user_agent text not null,
+  honeypot boolean not null default false,
+  created_at timestamptz not null default now()
+);
+
+create unique index if not exists newsletter_subscribers_email_key
+  on public.newsletter_subscribers (email);
+```
+
+The endpoint normalizes e-mail addresses to lowercase before insert and treats duplicate e-mails as a successful subscription so the modal can stay user-friendly.

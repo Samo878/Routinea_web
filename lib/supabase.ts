@@ -49,14 +49,42 @@ export type Database = {
         };
         Relationships: [];
       };
+      newsletter_subscribers: {
+        Row: {
+          id: string;
+          email: string;
+          source: string;
+          ip: string;
+          user_agent: string;
+          honeypot: boolean;
+          created_at: string;
+        };
+        Insert: {
+          email: string;
+          source: string;
+          ip: string;
+          user_agent: string;
+          honeypot?: boolean;
+          created_at?: string;
+        };
+        Update: {
+          email?: string;
+          source?: string;
+          ip?: string;
+          user_agent?: string;
+          honeypot?: boolean;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: {};
     Functions: {};
   };
 };
 
-export const DEFAULT_SUPABASE_CONTACT_TABLE: keyof Database["public"]["Tables"] =
-  "contact_submissions";
+export const DEFAULT_SUPABASE_CONTACT_TABLE = "contact_submissions" as const;
+export const DEFAULT_SUPABASE_NEWSLETTER_TABLE = "newsletter_subscribers" as const;
 
 function getEnvValue(name: string): string {
   const value = process.env[name];

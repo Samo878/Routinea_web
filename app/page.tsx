@@ -7,11 +7,13 @@ import {
   valuePills,
 } from "@/lib/content";
 import { LeadForm } from "@/components/lead-form";
+import { NewsletterModal } from "@/components/newsletter-modal";
 import { ScrollReveal } from "@/components/scroll-reveal";
 
 export default function HomePage() {
   return (
     <div>
+      <NewsletterModal />
       <ScrollReveal startVisible={true}>
         <section className="section-shell pt-20 md:pt-24">
         <div className="mx-auto grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
